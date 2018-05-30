@@ -1,19 +1,22 @@
 input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
+
 button {
   background-color: #4CAF50;
   color: white;
@@ -24,20 +27,25 @@ button {
   width: 100%;
   opacity: 0.9;
 }
+
 button:hover {
-  opacity:1;
+  opacity: 1;
 }
+
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
+
 .cancelbtn, .signupbtn {
   float: left;
   width: 50%;
 }
+
 .container {
   padding: 16px;
 }
+
 .buttonss::after {
   content: "";
   clear: both;
@@ -45,59 +53,99 @@ button:hover {
 }
 
 @media screen and (max-width: 300px) {
-.cancelbtn, .signupbtn {
-  width: 100%;
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
 }
-}
+
 /* Home page styles */
-.footer{
+
+.footer {
   background-color: grey;
   text-align: center;
   height: 100px;
   color: orange;
 }
-.body{
+
+.body {
   background-color: blue;
 }
-.p1{
+
+.p1 {
   padding-top: 3%;
 }
-.about{
+
+.about {
   height: 120px;
   text-align: center;
   border: 3px solid #f1f1f1;
   padding-bottom: 1%;
   color: orange;
 }
+
 .navigation a {
-    float: left;
-    color: orange;
-    text-align: center;
-    padding: 15px 18px;
-    text-decoration: none;
-    font-size: 15px;
-    width: 16.65%;
-    background-color: white;
-}
-.image{
-  width: 100%;
-}
-.navigation a:hover {
-    background-color: #ddd;
-    color: black;
+  float: left;
+  color: orange;
+  text-align: center;
+  padding: 15px 18px;
+  text-decoration: none;
+  font-size: 15px;
+  width: 16.65%;
+  background-color: white;
 }
 
-.one{
+.image {
+  width: 100%;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.one {
   width: 70%;
   height: 100px;
 }
-.input{
+
+.input {
   width: 20px;
 }
-.welcome{
+
+.welcome {
   height: 120px;
   text-align: center;
   border: 3px solid #f1f1f1;
   padding-bottom: 1%;
   color: orange;
+}
+
+//eventbrowse css
+element.style {}
+
+.banner.style3 .banner-text .banner-search .input-box:first-child input {
+  border-radius: 35px 0 0 35px;
+  border: none;
+}
+
+#page2 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  /* padding: 20%; */
+  padding-top: 5%;
+  padding-left: 35%;
+  padding-right: 35%;
+  background-image: url(../images/e7.jpg);
+  background-size: contain;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+}
+
+.form-control {
+  font-size: 20px;
+  color: black;
 }
