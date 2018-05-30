@@ -19,5 +19,16 @@ public class FreeEvents {
     public String getDescription() {
         return description;
       }
+
+      @Override
+  public boolean equals(Object otherFreeEvent){
+    if (!(otherFreeEvent instanceof FreeEvents)) {
+      return false;
+    } else {
+    FreeEvents newFreeEvent = (FreeEvents) otherFreeEvent;
+      return this.getName().equals(newFreeEvent.getName()) &&
+             this.getLocation().equals(newFreeEvent.getLocation());
+    }
+  }
   
   }
