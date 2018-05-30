@@ -1,8 +1,11 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-import org.w3c.dom.events.Event;
+import org.sql2o.*;
 
 public class FreeeventsTest {
+
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void event_instantiatesCorrectly_true() {
@@ -33,6 +36,14 @@ public class FreeeventsTest {
     Event testEvent = event1;
     Event anotherEvent = event1;
     assertTrue(testEvent.equals(anotherEvent));
+  }
+
+  @Test
+  public void save_assignsIdToFreeEvent() {
+    Event testEvent = event1;
+    testEvent.save();
+    Event savedEvent = Event.all().get(0);
+    assertEquals(savedEvent.getId(), testEvent.getId());
   }
 
 
