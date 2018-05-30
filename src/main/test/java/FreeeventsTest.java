@@ -56,6 +56,15 @@ public class FreeeventsTest {
     assertEquals(true, Event.all().get(1).equals(secondEvent));
   }
 
+  @Test
+  public void find_returnsFreeEventsWithSameId_secondFreeEvent() {
+    Event firstEvent = Event1;
+    firstEvent.save();
+    Event secondEvent = event2;
+    secondEvent.save();
+    assertEquals(Event.find(secondEvent.getId()), secondEvent);
+  }
+
 
 
 }

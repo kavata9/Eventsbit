@@ -7,6 +7,7 @@ public class FreeEvents {
     private String name;
     private String location;
     private String description;
+    private int id;
   
     public FreeEvents(String name, String location, String description) {
       this.name = name;
@@ -25,6 +26,10 @@ public class FreeEvents {
         return description;
       }
 
+      public int getId() {
+        return id;
+      }
+
       @Override
   public boolean equals(Object otherFreeEvent){
     if (!(otherFreeEvent instanceof FreeEvents)) {
@@ -38,12 +43,13 @@ public class FreeEvents {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO freeevents (name, location, description) VALUES (:name, :location, :description)";
-      con.createQuery(sql)
+      String sql = "INSERT INTO freeevents (name, location, description) VALUES (:name, :location, description)";
+      this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
         .addParameter("location", this.location)
         .addParameter("description", this.description)
-        .executeUpdate();
+        .executeUpdate()
+        .getKey();
     }
   }
 
@@ -53,5 +59,16 @@ public class FreeEvents {
      return con.createQuery(sql).executeAndFetch(FreeEvents.class);
     }
   }
+
+  public static FreeEvents find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM freeevents where id=:id";
+      FreeEvents freeevents = con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetchFirst(FreeEvents.class);
+      return freeevents;
+    }
+  }
+  
   
   }
