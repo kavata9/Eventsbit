@@ -28,4 +28,13 @@ public class FreeeventsTest {
     assertEquals("Techprenuer", testEvent.getDescription());
   }
 
+  @Test
+  public void equals_returnsTrueIfNameAreSame_true() {
+    Event testEvent = event1;
+    Event anotherEvent = event1;
+    assertTrue(testEvent.equals(anotherEvent));
+  }
+
+
+
 }
