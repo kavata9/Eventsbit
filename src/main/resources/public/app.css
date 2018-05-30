@@ -136,8 +136,10 @@ element.style {}
   padding-top: 5%;
   padding-left: 35%;
   padding-right: 35%;
-  background-image: url(../images/e7.jpg);
-  background-size: contain;
+  background-color: white;
+  color: orange;
+  /* background-image: url(../images/orange.jpeg);
+  background-size: cover; */
 }
 
 h1 {
@@ -147,5 +149,4 @@ h1 {
 
 .form-control {
   font-size: 20px;
-  color: black;
 }
