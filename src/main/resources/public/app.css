@@ -49,3 +49,55 @@ button:hover {
   width: 100%;
 }
 }
+/* Home page styles */
+.footer{
+  background-color: grey;
+  text-align: center;
+  height: 100px;
+  color: orange;
+}
+.body{
+  background-color: blue;
+}
+.p1{
+  padding-top: 3%;
+}
+.about{
+  height: 120px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding-bottom: 1%;
+  color: orange;
+}
+.navigation a {
+    float: left;
+    color: orange;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-size: 15px;
+    width: 16.65%;
+    background-color: white;
+}
+.image{
+  width: 100%;
+}
+.navigation a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.one{
+  width: 70%;
+  height: 100px;
+}
+.input{
+  width: 20px;
+}
+.welcome{
+  height: 120px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding-bottom: 1%;
+  color: orange;
+}
