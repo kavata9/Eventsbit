@@ -29,4 +29,15 @@ public class PaidEvents {
       return charges;
     }
 
+    @Override
+  public boolean equals(Object otherPaidEvents) {
+    if (!(otherPaidEvents instanceof PaidEvents)) {
+      return false;
+    } else {
+      PaidEvents newEvents = (PaidEvents) otherPaidEvents;
+      return this.getEventsName().equals(newEvents.getEventsName())
+          && this.getLocation().equals(newEvents.getLocation());
+    }
+  }
+
   }

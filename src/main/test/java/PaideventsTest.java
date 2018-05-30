@@ -19,4 +19,24 @@ public class PaidEventsTest {
     assertEquals("Google", testEvents.getEventsName());
   }
 
+  @Test
+  public void getLocation_paideventsInstantiatesWithLocation_Sillicon_valley() {
+    Events testEvents = events1;
+    assertEquals("Sillicon_valley", testEvents.getLocation());
+  }
+
+  @Test
+  public void getFreeEventsId_paideventsnInstantiatesWithFreeEventsId_1() {
+    Events testEvents = events1;
+    assertEquals(1, testEvents.getFreeEventsId());
+  }
+
+  @Test
+  public void equals_returnsTrueIfNameAndLocationAreSame_true() {
+    Events testEvents = events1;
+    Events anotherEvents = events1;
+    assertTrue(testEvents.equals(anotherEvents));
+  }
+
+
 }
