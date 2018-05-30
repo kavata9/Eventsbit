@@ -46,6 +46,16 @@ public class FreeeventsTest {
     assertEquals(savedEvent.getId(), testEvent.getId());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfFreeEvent_true() {
+    Event firstEvent = event1;
+    firstEvent.save();
+    Event secondEvent = event2;
+    secondEvent.save();
+    assertEquals(true, Event.all().get(0).equals(firstEvent));
+    assertEquals(true, Event.all().get(1).equals(secondEvent));
+  }
+
 
 
 }

@@ -1,4 +1,6 @@
 import org.sql2o.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FreeEvents {
@@ -42,6 +44,13 @@ public class FreeEvents {
         .addParameter("location", this.location)
         .addParameter("description", this.description)
         .executeUpdate();
+    }
+  }
+
+  public static List<FreeEvents> all() {
+    String sql = "SELECT * FROM freeevents";
+    try(Connection con = DB.sql2o.open()) {
+     return con.createQuery(sql).executeAndFetch(FreeEvents.class);
     }
   }
   
