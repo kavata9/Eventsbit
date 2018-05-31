@@ -31,6 +31,9 @@ public class PaidEvents {
     public int getCharges() {
       return charges;
     }
+    public int getId(){
+      return id;
+    }
 
     @Override
   public boolean equals(Object otherPaidEvents) {
@@ -50,6 +53,7 @@ public class PaidEvents {
         .addParameter("eventsname", this.eventsname)
         .addParameter("location", this.location)
         .addParameter("charges", this.charges)
+        .addParameter("freeeventsid", this.freeeventsid)
         .executeUpdate()
         .getKey();
     }

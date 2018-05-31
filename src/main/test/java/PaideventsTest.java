@@ -44,6 +44,13 @@ public class PaidEventsTest {
     testEvents.save();
     assertEquals(true, PaidEvents.all().get(0).equals(testEvents));
   }
+  @Test
+  public void save_assignsIdToPaidEvents() {
+    Events testEvents = new Events("Google", "Silicon Valley", "IOT", "8000", 1
+    testEvents.save();
+    Events saveEvents = Events.all().get(0);
+    assertEquals(savedEvents.getId(), testEvents.getId());
+  }
 
 
 }
