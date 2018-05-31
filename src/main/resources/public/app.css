@@ -129,13 +129,12 @@ element.style {}
 }
 
 #page2 {
-  text-align: center;
+  text-align: left;
   font-family: 'Dancing Script', cursive;
   font-size: 30px;
-  /* padding: 20%; */
+  padding-left: 5%;
   padding-top: 5%;
-  padding-left: 35%;
-  padding-right: 35%;
+  padding-right: 50%;
   background-color: white;
   color: orange;
   /* background-image: url(../images/orange.jpeg);
