@@ -1,3 +1,6 @@
+import org.sql2o.*;
+
+
 public class PaidEvents {
     private String eventsname;
     private String location;
@@ -37,6 +40,18 @@ public class PaidEvents {
       PaidEvents newEvents = (PaidEvents) otherPaidEvents;
       return this.getEventsName().equals(newEvents.getEventsName())
           && this.getLocation().equals(newEvents.getLocation());
+    }
+  }
+
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO paidevents (eventsname, location, charges,freeeventsid,) VALUES (:eventsname, :location, :charges, :freeeventsId,)";
+      this.id = (int) con.createQuery(sql, true)
+        .addParameter("eventsname", this.eventsname)
+        .addParameter("location", this.location)
+        .addParameter("charges", this.charges)
+        .executeUpdate()
+        .getKey();
     }
   }
 

@@ -38,5 +38,12 @@ public class PaidEventsTest {
     assertTrue(testEvents.equals(anotherEvents));
   }
 
+  @Test
+  public void save_insertsObjectIntoDatabase_PaidEvents() {
+    Events testEvents = events1;
+    testEvents.save();
+    assertEquals(true, PaidEvents.all().get(0).equals(testEvents));
+  }
+
 
 }
