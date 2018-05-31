@@ -4,7 +4,7 @@ Moringa School core Java Team Project
 
 #### _05.30.2018_
 
-#### By _**Janet Isak**_
+#### By _**Janet Isak,Kavata Musyoka,MacMillan Kimutai**_
 
 ## Description
 
@@ -21,15 +21,15 @@ _The applications allows users to do the following:_
 ## Setup/Installation Requirements
 
 * _Make sure you have Java, Gradle and Postgres installed._
-<!-- * _Clone this repository from my Github named JanetIsak._ -->
+* _Clone this repository from my Github named kavata9.
 
 _Database set up instructions:_
 
-<!-- * _In PSQL:_
-* _CREATE DATABASE hair_salon;_
-* _CREATE TABLE stylists (id serial PRIMARY KEY, name varchar);_
-* _CREATE TABLE clients (id serial PRIMARY KEY, name varchar, gender varchar, int cellphone);_
-* _Go to **https://enigmatic-headland-33957.herokuapp.com/** for more information._ -->
+* _In PSQL:_
+* _CREATE DATABASE event_bit;_
+* _CREATE TABLE freeevents (id serial PRIMARY KEY, name varchar,location varchar,description varchar);_
+* _CREATE TABLE paidevents (id serial PRIMARY KEY, name varchar,location varchar,description varchar);_
+* _Go to **** for more information._
 
 
 ## Known Bugs
@@ -38,7 +38,7 @@ _No known bugs._
 
 ## Support and contact details
 
-<!-- _If you run into any issues or have questions, ideas or concerns, contact me at **janetisak@yahoo.com**. I encourage you to make a contribution to the code if see fit for improvement._ -->
+_If you run into any issues or have questions, ideas or concerns, contact me at **janetisak@yahoo.com,kavatamusyoka24@gmail.com,mcmyllano@gmail.com**. I encourage you to make a contribution to the code if see fit for improvement._
 
 ## Technologies Used
 
@@ -52,4 +52,4 @@ _No known bugs._
 
 *This software is Licensed under the MIT License.*
 
-<!-- Copyright (c) 2018 **_Janet Isak_** -->
+ Copyright (c) 2018 **_Janet Isak, kavata Musyoka ,MacMillan Kimutai_**
