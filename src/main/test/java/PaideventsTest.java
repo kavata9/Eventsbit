@@ -52,5 +52,36 @@ public class PaidEventsTest {
     assertEquals(savedEvents.getId(), testEvents.getId());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfPaidEvents_true() {
+    Events firstEvents = events1;
+    firstEvents.save();
+    Events secondEvents = events2;
+    secondEventssave();
+    assertEquals(true, Events.all().get(0).equals(firstEvents));
+    assertEquals(true, Events.all().get(1).equals(secondEvents));
+  }
+
+  @Test
+  public void find_returnsPaidEventsWithSameId_secondPaidEvents() {
+    Events firstEvents = events1;
+    firstEvents.save();
+    Events secondEvents = events2;
+    secondEvents.save();
+    assertEquals(Events.find(secondEvents.getId()), secondEvents);
+  }
+
+  @Test
+  public void save_recordsTimeOfCreationInDatabase() {
+    Events testEvents = events1;
+    testEvents.save();
+    Timestamp savedEventsTime = Events.find(testEvents.getId()).getTimestamp();
+    Timestamp rightNow = new Timestamp(new Date().getTime());
+    assertEquals(rightNow.getDay(), savedEventsTime.getDay());
+  }
+
+
+
+
 
 }

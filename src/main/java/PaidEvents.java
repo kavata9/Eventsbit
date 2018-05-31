@@ -1,11 +1,15 @@
 import org.sql2o.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.Timestamp;
+
 
 
 public class PaidEvents {
     private String eventsname;
     private String location;
     private int freeeventsid;
-    // private Timestamp timestamp;
+    private Timestamp timestamp;
     private int charges;
     private int id;
   
@@ -35,6 +39,11 @@ public class PaidEvents {
       return id;
     }
 
+    public Timestamp getTimestamp() {
+      return timestamp;
+    }
+  
+
     @Override
   public boolean equals(Object otherPaidEvents) {
     if (!(otherPaidEvents instanceof PaidEvents)) {
@@ -56,6 +65,21 @@ public class PaidEvents {
         .addParameter("freeeventsid", this.freeeventsid)
         .executeUpdate()
         .getKey();
+    }
+  }
+
+  public static List<PaidEvents> all() {
+    String sql = "select * from paideventss";
+    try (Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(PaidEvents.class);
+    }
+  }
+
+  public static PaidEvents find(int id) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM paidevents WHERE id=:id";
+      PaidEvents blog = con.createQuery(sql).addParameter("id", id).executeAndFetchFirst(PaidEvents.class);
+      return blog;
     }
   }
 
