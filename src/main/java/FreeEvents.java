@@ -9,24 +9,26 @@ public class FreeEvents {
     private String description;
     private int id;
   
-    public FreeEvents(String name, String location, String description) {
+    public FreeEvents(String name, String description, String location) {
       this.name = name;
+      this.description = description;
       this.location = location;
+      
     }
   
     public String getName() {
       return name;
+    }
+
+    public String getDescription() {
+      return description;
     }
   
     public String getLocation() {
       return location;
     }
 
-    public String getDescription() {
-        return description;
-      }
-
-      public int getId() {
+    public int getId() {
         return id;
       }
 
@@ -37,17 +39,19 @@ public class FreeEvents {
     } else {
     FreeEvents newFreeEvent = (FreeEvents) otherFreeEvent;
       return this.getName().equals(newFreeEvent.getName()) &&
+             this.getDescription().equals(newFreeEvent.getDescription()) &&
              this.getLocation().equals(newFreeEvent.getLocation());
+
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO freeevents (name, location, description) VALUES (:name, :location, description)";
+      String sql = "INSERT INTO freeevents (name, description, location) VALUES (:name, :description, :location)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
-        .addParameter("location", this.location)
         .addParameter("description", this.description)
+        .addParameter("location", this.location)
         .executeUpdate()
         .getKey();
     }

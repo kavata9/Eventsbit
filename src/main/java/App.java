@@ -17,11 +17,35 @@ public class App{
     }, new VelocityTemplateEngine());
 
 
-   get("/eventbrowse", (request, response) -> {
+   get("/eventbrowser", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
      model.put("sign", request.session().attribute("sign"));
-     model.put("template", "templates/eventbrowse.vtl");
+     model.put("template", "templates/eventbrowser.vtl");
+     model.put("showevent", false);
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
- }
+
+//    get("/freeevents", (request, response) -> {
+//     Map<String, Object> model = new HashMap<String, Object>();
+//     model.put("sign", request.session().attribute("sign"));
+//     model.put("template", "templates/freeevents.vtl");
+//     // model.put("showevent", false);
+//     return new ModelAndView(model, layout);
+//   }, new VelocityTemplateEngine());
+   
+   post("/eventbrowser", (request, reponse) -> {
+       Map<String, Object> model = new HashMap<String, Object>(); 
+       String name = request.queryParams("name");
+       String description = request.queryParams("description");
+       String location = request.queryParams("location");
+       FreeEvents newFreeEvents = new FreeEvents(name, location, description);
+       newFreeEvents.save();
+       model.put("showevent", true);
+       model.put("FreeEvents",newFreeEvents);
+       model.put("template", "templates/eventbrowser.vtl");
+       return new ModelAndView(model, layout);
+   }, new VelocityTemplateEngine());
+  }
 }
+
+

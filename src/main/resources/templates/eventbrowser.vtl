@@ -1,34 +1,49 @@
 <body id="page2">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <h1 class><b>
-      Every Event Should be
-     <span>Perfect</span><b>
-   </h1>
-  </div>
-  <p>Create the Perfect event</p>
-  <form action="" method="post">
-    <div class="form-group">
-      <select type="text" class="form-control">
-        <option label="Event type">--Event Type--</option>
-        <option value="PaidEvents">Free Events</option>
-        <option value="PaidEvents">Paid Events</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <select type="text" class="form-control">
-        <option label="Location">--Location--</option>
-        <option>Niarobi</option>
-        <option>Mombasa</option>
-        <option>Kisumu</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <input type="date" class="form-control">
-    </div>
-    <br>
+        <h1 class="class">
+            <b>
+                Every Event Should be
+                <span>Perfect</span>
+                <b></h1>
+            </div>
+            <p>Create the Perfect event</p>
+            <form action="/eventbrowser" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" name="name">
+                    </div>
+                    <div class="form-group">
+                    <select type="text" class="form-control" name="description">
+                        <option label="Event type">--Event Type--</option>
+                        <option value=FreeEvents>Free Events</option>
+                        <option value=PaidEvents>Paid Events</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select type="text" class="form-control" name="location">
+                        <option label="Location">--Location--</option>
+                        <option>Niarobi</option>
+                        <option>Mombasa</option>
+                        <option>Kisumu</option>
+                    </select>
+                </div>
+                ## <div class="form-group">
+                ##     <input type="date" class="form-control" name="date">
+                ## </div>
+                ## <br>
 
-    <input type="submit" value="Search Now">
-    </div>
+                <button type="submit" class="btn btn-danger">Add Event!</button>
+            </div>
+        </form>
 
-</body>
+        <div>
+        <ul>
+        #if($showevent)
+<li>$FreeEvents.getName()</li>
+<li>$FreeEvents.getDescription()</li>
+<li>$FreeEvents.getLocation()</li>
+        #end
+
+</ul>
+        </div>
+        </body>
